@@ -1,7 +1,7 @@
 # Личный проект «Что посмотреть» [![Build status][travis-image]][travis-url]
 
 * Студент: [Николай Райкевич](https://up.htmlacademy.ru/react/5/user/1614113).
-* Наставник: `Неизвестно`.
+* Наставник: [Александр Стариков](https://htmlacademy.ru/profile/id1152617).
 
 ---
 
