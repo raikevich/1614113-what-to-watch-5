@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Home = (props) => {
+const Main = (props) => {
   const {filmName} = props;
   const {filmGenre} = props;
   const {filmYear} = props;
@@ -308,10 +308,10 @@ const Home = (props) => {
   </React.Fragment>;
 };
 
-Home.propTypes = {
+Main.propTypes = {
   filmName: PropTypes.string.isRequired,
   filmGenre: PropTypes.string.isRequired,
   filmYear: PropTypes.number.isRequired,
 };
 
-export default Home;
+export default Main;
