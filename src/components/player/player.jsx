@@ -1,10 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
+import propTypes from "../../propTypes";
 
 const Player = (props) => {
+  const {films, filmId} = props;
+  const film = films[filmId];
+
   return <React.Fragment>
     <div className="player">
-      <video src="#" className="player__video" poster="img/player-poster.jpg"></video>
+      <video src={film.src} className="player__video" poster={film.background}></video>
 
       <button type="button" className="player__exit">Exit</button>
 
@@ -12,7 +15,7 @@ const Player = (props) => {
         <div className="player__controls-row">
           <div className="player__time">
             <progress className="player__progress" value="30" max="100"></progress>
-            <div className="player__toggler" style="left: 30%;">Toggler</div>
+            <div className="player__toggler" style={{left: `30%`}}>Toggler</div>
           </div>
           <div className="player__time-value">1:30:29</div>
         </div>
@@ -38,6 +41,6 @@ const Player = (props) => {
   </React.Fragment>;
 };
 
-Player.propTypes = {};
+Player.propTypes = Object.assign({}, propTypes.PropTypesFilms, propTypes.PropTypesFilmId);
 
 export default Player;
