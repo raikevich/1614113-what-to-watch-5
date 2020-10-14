@@ -5,6 +5,18 @@ import propTypes from "../../propTypes";
 const Film = (props) => {
   const {films, reviews, filmId} = props;
   const film = films[filmId];
+  console.log(reviews);
+  let filmRating = 0;
+
+  for (let review of reviews) {
+    filmRating += review.rating;
+  }
+
+  filmRating = filmRating/reviews.length;
+  filmRating = new Intl.NumberFormat('ru', {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1
+  }).format(filmRating);
 
   return <React.Fragment>
     <section className="movie-card movie-card--full">
@@ -80,10 +92,10 @@ const Film = (props) => {
             </nav>
 
             <div className="movie-rating">
-              <div className="movie-rating__score">8,9</div>
+              <div className="movie-rating__score">{filmRating}</div>
               <p className="movie-rating__meta">
                 <span className="movie-rating__level">Very good</span>
-                <span className="movie-rating__count">240 ratings</span>
+                <span className="movie-rating__count">{reviews.length} ratings</span>
               </p>
             </div>
 
